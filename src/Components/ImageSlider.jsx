@@ -28,9 +28,9 @@ class ImageSlider extends Component {
     const { currentImageIndex } = this.state;
 
     return (
-      <div className="image-slider">
+      <div className="image-slider" style={{position:'absolute',left:'30%'}}>
         <button className='btn btn-info me-2' onClick={this.prevImage}>Previous</button>
-        <img
+        <img className='imgs'
           src={images[currentImageIndex]}
           alt={`Slide ${currentImageIndex + 1}`}
         />
@@ -49,8 +49,8 @@ function ImageSliderr() {
   ];
 
   return (
-    <div className="App m-5 p-5 justify-content-center align-items-center">
-      <ImageSlider images={images} />
+    <div className="App p-5 justify-content-center align-items-center">
+      <div><ImageSlider images={images} /></div>
     </div>
   );
 }
